@@ -5,15 +5,27 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-    <title>Pedido de Compra</title>
-    <link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+    <title>Ordem de Fabricação</title>
+    <!--Bootsrap 4 CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--JQUERY CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+
+    <!--Custom styles-->
+  	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+
+    <!--Custom Javascript-->
     <script src="js/edt_mask.js"></script>
 </head>
 <body>
   <header>
 
     <?php
-      include "menu.inc";
+      include "menu.php";
     ?>
   </header>
 

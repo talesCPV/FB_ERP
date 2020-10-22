@@ -1383,8 +1383,8 @@ $(document).ready(function(){
                     $('#popTitle').html('Dados do Funcionário - '+id_func);     
                 break;
 
-                default:
-                        if (arr[arr.length-1] == 'cargos.php#' || arr[arr.length-1] == 'cargos.php'){         
+                default:                    
+                    if (arr[arr.length-1] == 'cargos.php#' || arr[arr.length-1] == 'cargos.php'){         
                         var id_cargo = $.trim($(this).children('td').slice(0, 1).text().toUpperCase());
                         var cargo = $.trim($(this).children('td').slice(1, 2).text().toUpperCase());
                         var tipo = $.trim($(this).children('td').slice(2, 3).text().toUpperCase());
@@ -1425,7 +1425,7 @@ $(document).ready(function(){
                         $(".content").html(table);
                         $('#popTitle').html('Cadastro de Cargos e Funções');    
                     } 
-                break;                  
+                break;             
         }
 
         $(".overlay").css("visibility", "visible").css("opacity", "1");  

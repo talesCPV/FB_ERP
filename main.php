@@ -15,17 +15,16 @@
     <!--JQUERY CDN-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
 
-
-
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css"  href="css/estilo.css" />
 
+    <!--Custom Javascript-->
     <script src="js/funcoes.js"></script> 
 </head>
 <body>
   <header>
     <?php
-      include "menu.inc";
+      include "menu.php";
     ?>
   </header>
   <div class="page_container">  

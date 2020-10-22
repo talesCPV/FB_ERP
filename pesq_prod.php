@@ -5,39 +5,54 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Pesquisa por Produto</title>
-    <link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+	<title>Pesquisa por Produto</title>
+	
+    <!--Bootsrap 4 CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--JQUERY CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/pesq_prod.js"></script>
-    <script src="js/edt_mask.js"></script>
+
+    <!--Custom styles-->
+	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+
+    <!--Custom Javascript-->
+	<script src="js/pesq_prod.js"></script>
+	<script src="js/edt_mask.js"></script>
+	
 </head>
 <body>
   <header>
     <?php
-      include "menu.inc";
+      include "menu.php";
     ?>
   </header>
   <div class="page_container">  
   	  <div class="page_form">
   	  	<p class="logo"> Pesquisa por Produto</p> <br>
   	  	<form class="login-form" method="POST" action="#">
-  	  		<table class="search-table"  border="0"><tr><td>
-  		  <label> Busca por: </label> </td><td>
-	      <select name="campo">
-	        <option value="desc">Descricao</option>
-	        <option value="cod">Codigo</option>
-	        <option value="forn">Fornecedor</option>
-	        <option value="servico">Servicos</option>
-	        <option value="conj">Conjuntos</option>
-	        <option value="tinta">Tintas</option>
-	        <option value="pigmto">Pigmentos</option>
-	        <option value="cod_bar">Cod. Produto</option>
-	        <option value="cod_cli">Cod. de Barras</option>
-	        <option value="etq_min">Estoque Baixo</option>
-	    </select></td><td>
-      <input type="text" name="valor" maxlength="12"/></td><td>
-	  <button class="botao_inline" type="submit">OK</button></td></tr>  </table>
-
+  	  		<table class="search-table"  border="0">
+				<tr>
+					<td><label> Busca por: </label> </td>
+					<td><select name="campo">
+							<option value="desc">Descricao</option>
+							<option value="cod">Codigo</option>
+							<option value="forn">Fornecedor</option>
+							<option value="servico">Servicos</option>
+							<option value="conj">Conjuntos</option>
+							<option value="tinta">Tintas</option>
+							<option value="pigmto">Pigmentos</option>
+							<option value="cod_bar">Cod. Produto</option>
+							<option value="cod_cli">Cod. de Barras</option>
+							<option value="etq_min">Estoque Baixo</option>
+						</select></td>
+					<td><input type="text" name="valor" maxlength="12"/></td>
+					<td><button class="botao_inline" type="submit">OK</button></td>
+				</tr>
+			</table>
     	</form>
 	  </div>
 
