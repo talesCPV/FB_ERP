@@ -3,7 +3,7 @@
 include "conecta_mysql.inc";
 
 if (!$conexao)
-	die ("Erro de conexão com localhost, o seguinte erro ocorreu -> ".mysql_error());
+	die ("Erro de conexï¿½o com localhost, o seguinte erro ocorreu -> ".mysql_error());
 
 $destino = 'cad_item_ped.php';
 
@@ -51,6 +51,7 @@ switch (get_post_action('adicionar', 'alterar', 'remover', 'encerrar')) {
     	$cod_prod = $_POST ["cod_prod"];
 	    $qtd = $_POST ["qtd"];
 		$query = "INSERT INTO tb_item_ped ( id_prod, id_ped, qtd, preco, und) VALUES ('$cod_prod', '$cod_ped', '$qtd', $preco, '$und')";   
+//		echo $query;
         break;
 
     case 'alterar':

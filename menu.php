@@ -67,8 +67,9 @@
           </ul>
         
 
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="form-inline my-2 my-lg-0" method="POST" action="pesq_prod.php">
+            <input type="hidden" id="custId" name="campo" value="desc">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="valor">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
 

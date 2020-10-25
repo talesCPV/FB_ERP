@@ -5,16 +5,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-    <title>Pesquisa por Produto</title>
-     <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css"  href="css/estilo.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/funcoes.js"></script>
+    <title>Itens do Pedido</title>
+    <!--Bootsrap 4 CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--JQUERY CDN-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Custom styles-->
+	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+
+    <!--Custom Javascript-->
+    <script src="js/cad_item_ped.js"></script>
 </head>
 <body>
   <header>
     <?php
-      include "menu.inc";
+      include "menu.php";
       if (IsSet($_COOKIE["cod_ped"])){
         $cod_ped = $_COOKIE["cod_ped"];
       }
@@ -264,6 +274,7 @@
                        "<td>" .$fetch[6] . "</td>".
                        "<td style='visibility: collapse' >" .$cod_ped . "</td>".
                        "<td style='visibility: collapse' >" .$tipo . "</td>".
+                       "<td style='visibility: collapse' >" .$fetch[0] . "</td>".
                        "</tr>";
                   }
                 echo"

@@ -7,14 +7,25 @@
 <head>
   <meta charset="UTF-8">
     <title>Feriados</title>
-    <link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+    <!--Bootsrap 4 CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--JQUERY CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Custom styles-->
+	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+
+    <!--Custom Javascript-->
     <script src="js/funcoes.js"></script>
 </head>
 <body>
   <header>
     <?php
-      include "menu.inc";
+      include "menu.php";
     ?>
   </header>
   <div class="page_container">  

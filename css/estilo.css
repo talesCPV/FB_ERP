@@ -228,7 +228,7 @@ body {
     height: auto;
     width: 2200px;  /* controla a largura da página (1200 é o normal) */
     background: rgb(255, 255, 255);
-    max-width: 1400px;
+    max-width: 90%;
     margin: 100px auto 10px;
     padding: 20px 45px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
