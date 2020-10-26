@@ -6,7 +6,19 @@
 <head>
   <meta charset="UTF-8">
     <title>Pedido de Compra</title>
-    <link rel="stylesheet" type="text/css"  href="estilo.css" />
+    <!--Bootsrap 4 CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--JQUERY CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+
+    <!--Custom styles-->
+  	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+
+    <!--Custom Javascript-->
     <script src="js/funcoes.js"></script>
 
 </head>
@@ -14,7 +26,7 @@
   <header>
 
     <?php
-      include "menu.inc";
+      include "menu.php";
       if (IsSet($_POST ["cod_ped"])){
 
         $cod_ped = $_POST ["cod_ped"];

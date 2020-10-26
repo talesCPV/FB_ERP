@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-    <title>Hora Extra</title>
+    <title>Relogio de Ponto</title>
     <!--Bootsrap 4 CDN-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!--JQUERY CDN-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
 
     <!--Custom styles-->
-	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
+  	<link rel="stylesheet" type="text/css"  href="css/estilo.css" />
 
     <!--Custom Javascript-->
-    <script src="js/funcoes.js"></script>
+    <script src="js/horas.js"></script>
+
 </head>
 <body>
   <header>
@@ -103,7 +104,7 @@
 
                 echo"  <div class=\"page_form\" id=\"no_margin\">
                             <p class=\"logo\" id=\"lblPesq\"> Lançamento de Horas </p> <br>
-                            <table class=\"search-tabl\" id=\"tabHoras\" >";
+                            <table class=\"table-bordered \" id=\"tabHoras\" >";
 
 
 				if ($status == "TDS"){
@@ -174,7 +175,7 @@
 					}
 
 
-					echo "<tr {$dw[1]} class='tbl_row'><th><a {$dw[2]}>".(date("d/m/Y", $d))."</a></th><th>{$dw[0]}</th>";
+					echo "<tr {$dw[1]} class='tbl_row'><th><a {$dw[2]}>".(date("d/m/Y", $d))."</a></th><th class='center_text'>{$dw[0]}</th>";
 
 					$query =  "SELECT * FROM tb_hora_extra  WHERE entrada like '". date('Y-m-d',$d) ."%'";
 					$result = mysqli_query($conexao, $query);
@@ -235,10 +236,16 @@
 								$he_an[$i] = $he_an[$i] + $extra_noturno;
 								$falta[$i] = $falta[$i] + $falta_dia;
 
+								if($falta_dia == 0){
+									$cor = "BCD0FE"; // Azul claro
+								}else{
+									$cor = "E55064"; // Vermelho Claro
+								}
+
 
 //								echo $nome_func[$i]." ".date("d/m/Y",$ent*3600)." HT:". $ht." HE:".$extra." NOT:".$noturno." HE+NOT:".$extra_noturno." Falta:".$falta_dia.   "<br>";
 								
-								echo "<td class='center_text'>".date("H:i",$ent*3600)."</td><td class='center_text'>".date("H:i",$sai*3600)."</td>"; 
+								echo "<td class='center_text' style='background-color:#{$cor};' >".date("H:i",$ent*3600)."</td><td class='center_text' style='background-color:#{$cor};' >".date("H:i",$sai*3600)."</td>"; 
 								break;
 							}
 
@@ -267,7 +274,7 @@
 						<div class='page_form' id='no_margin'>
 						<form class='login-form' method='POST' action='pdf_he.php'>
 						<p class='logo' id='lblPesq'> Resumo </p> <br>
-						<table class='search-table'> 
+						<table class='search-table table-bordered table-striped'> 
 							<tr class='center_text'>
 								<th>Nome</th>
 								<th>Horas</th>
