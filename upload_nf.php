@@ -31,12 +31,12 @@
     $e_id = $_POST["eid"];
     $destino = $_POST["destino"];
     $arquivo = $_FILES["up_pdf"]["name"];
-    $file_name = "nf/{$destino}/".$e_id."_".$cod.".pdf";
+    $file_name = "../nf/{$destino}/".$e_id."_".$cod.".pdf";
           
     copy($_FILES["up_pdf"]["tmp_name"],$file_name);
 
-
-//echo $file_name;
+//echo $destino."<br>";
+//echo $file_name."<br>";
 
     metadata($file_name, $cod, $destino);
 
@@ -45,7 +45,7 @@
     }else{
       header('Location: pesq_ped.php'); 
     }
- 
+
 
   }
 ?>

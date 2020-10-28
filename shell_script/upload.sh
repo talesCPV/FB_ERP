@@ -3,7 +3,7 @@ HOST='108.179.253.234'
 USER='menu@flexibus.com.br'
 PASS='Xspider0'
 HDIR="/"
-LDIR='/opt/lampp/htdocs/ERP/'
+LDIR='/opt/lampp/htdocs/FB_ERP/'
 
 dir_atual=$(pwd)
 

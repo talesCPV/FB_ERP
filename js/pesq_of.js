@@ -57,7 +57,7 @@ $(document).ready(function(){
         var form = "<form id='frmDetalhar' method='POST' action='cad_item_of.php'><input type='hidden' name='cod_serv' value='"+id_of+"'></form>";
         form +=    "<form id='frmImprimir' method='POST' action='pdf_of.php'><input type='hidden' name='cod_serv' value='"+id_of+"'></form>";
         form +=    "<form id='frmRefresh' method='POST' action='#'></form>";
-        var Btn =  "<table><tr><td><button name='adicionar' id='btnDet'>Detalhar</button></td><td><button name='imprimir' id='btnImp'>Imprimir</button></td>";
+        var Btn =  "<table><tr><td><button class ='btn btn-outline-success mr-1' name='adicionar' id='btnDet'>Detalhar</button></td><td><button class ='btn btn-outline-success mr-1' name='imprimir' id='btnImp'>Imprimir</button></td>";
 
         if(status == "ABERTO"){
             Btn += "<td><button name='deletar' id='btnDel'>Deletar</button></td>";

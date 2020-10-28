@@ -68,21 +68,22 @@ $(document).ready(function(){
             }); 
 
             if(have_nf == "@"){
-                Btn += "<button id='btnVerPDF'>Abrir PDF</button>";
+                Btn += "<button class ='btn btn-outline-success mr-1' id='btnVerPDF'>Abrir PDF</button>";
                     
                 $(document).off('click', '#btnVerPDF').on('click', '#btnVerPDF', function() {
                     var out = '';
                     var arr = window.location.href.split("/");
-                    for(i=0; i<arr.length-1; i++){
+                    for(i=0; i<arr.length-2; i++){
                         out += arr[i]+'/';
                     }
                     out += path;
+
                     window.open(out, '_blank');
 
                 });
     
             }else{
-                Btn += "<button id='btnMarkPG'>Marcar PAGO</button>";
+                Btn += "<button class ='btn btn-outline-success mr-1' id='btnMarkPG'>Marcar PAGO</button>";
                     
                 $(document).off('click', '#btnMarkPG').on('click', '#btnMarkPG', function() {
                     
@@ -116,10 +117,10 @@ $(document).ready(function(){
                 table += "<input type='hidden' name='cod' value='"+cod+"'>";
                 table += "<input type='hidden' name='eid' value='FB'>";                
                 table += "<input type='hidden' name='destino' value='venda'>";
-                table += "<button type='submit' id='btnUpload'>Upload</button></td></tr>";                                      
+                table += "<button class ='btn btn-outline-success mr-1' type='submit' id='btnUpload'>Upload</button></td></tr>";                                      
             }
 
-            Btn += "<button id='btnAnalisar'>Analisar</button></td><td><button id='btnVisualizar'>Visualizar</button><button id='btnDeletar'>Deletar</button>";           
+            Btn += "<button class ='btn btn-outline-success mr-1' id='btnAnalisar'>Analisar</button></td><td><button class ='btn btn-outline-success mr-1' id='btnVisualizar'>Visualizar</button><button class ='btn btn-outline-success mr-1' id='btnDeletar'>Deletar</button>";           
 
             $(document).off('click', '#btnAnalisar').on('click', '#btnAnalisar', function() {
                 $('#frmPesqPed').attr('action', 'pdf_analise.php');

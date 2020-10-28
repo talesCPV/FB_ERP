@@ -208,13 +208,13 @@
   <div class="page_form">
     <p class="logo"> Configuracao de NFe</p> <br>
     <form class="login-form" name="cadastro" method="POST" action="#" >
-      <table>
-        <tr>
-          <td><button name="emitente" type="submit">Emitente</button></td>
-          <td><button name="fiscal" type="submit">Fiscal</button></td>
-          <td><button name="pedido" type="submit">Pedido</button></td>
-          <td><button name="itens" type="submit">Ítens</button></td>
-          <td><button name="fatura" type="submit">Fatura</button></td>
+      <table style='width: 100%;'>
+        <tr class="justify-content-md-center">
+          <td><button style='width: 95%;' class ='btn btn-outline-success mr-1' name="emitente" type="submit">Emitente</button></td>
+          <td><button style='width: 95%;' class ='btn btn-outline-success mr-1' name="fiscal" type="submit">Fiscal</button></td>
+          <td><button style='width: 95%;' class ='btn btn-outline-success mr-1' name="pedido" type="submit">Pedido</button></td>
+          <td><button style='width: 95%;' class ='btn btn-outline-success mr-1' name="itens" type="submit">Ítens</button></td>
+          <td><button style='width: 95%;' class ='btn btn-outline-success mr-1' name="fatura" type="submit">Fatura</button></td>
         </tr>
       </table>
       

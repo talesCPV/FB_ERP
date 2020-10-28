@@ -61,17 +61,19 @@ $(document).ready(function(){
             var form = "<form  id='frmPesqEnt' method='POST' action='edita_ent.php'><input type='hidden' name='cod_ent' value='"+id+"'>";
             form    += "<input type='hidden' name='status' value='"+status+"'>";
             var table = "<table><tr><td>Nota Fiscal:</td><td>"+nf+"</td></tr><tr><td>Fornecedor:</td><td>"+forn+"</td></tr><tr><td>Data:</td><td>"+data+"</td></tr><tr><td>Status:</td><td>"+status+"</td></tr>";
-            var Btn =  "<table><tr><td><button class ='btn btn-outline-primary' id='btnVisualizar'>Visualizar</button>";
+            var Btn =  "<table><tr><td><button class ='btn btn-outline-success mr-1' id='btnVisualizar'>Visualizar</button>";
 
             if(have_nf == "@"){
-                Btn += "<button class ='btn btn-outline-primary' id='btnVerPDF'>Abrir PDF</button>";
+                Btn += "<button class ='btn btn-outline-success mr-1' id='btnVerPDF'>Abrir PDF</button>";
                     
                 $(document).off('click', '#btnVerPDF').on('click', '#btnVerPDF', function() {
                     var out = '';
-                    for(i=0; i<arr.length-1; i++){
+                    var arr = window.location.href.split("/");
+                    for(i=0; i<arr.length-2; i++){
                         out += arr[i]+'/';
                     }
                     out += path;
+
                     window.open(out, '_blank');
                 });
 
@@ -86,7 +88,7 @@ $(document).ready(function(){
 
             if ($(this).perm(classe,'edit')){
 
-                Btn += "<button class ='btn btn-outline-primary' id='btnDeletar'>Deletar</button>";
+                Btn += "<button class ='btn btn-outline-success mr-1' id='btnDeletar'>Deletar</button>";
                 
                 $(document).off('click', '#btnDeletar').on('click', '#btnDeletar', function() {
                     if (confirm('Deseja remover o ítem definitivamente do sistema?')) {
@@ -96,15 +98,20 @@ $(document).ready(function(){
                 });
 
 /*
-<div class="input-group">
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile04">
-    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-  </div>
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Button</button>
-  </div>
-</div>
+                    table += "    <div class='input-group'>";
+                    table += "      <form id='frmUpload' action='upload_nf.php' method='post' enctype='multipart/form-data'>";
+                    table += "          <div class='custom-file'>";
+                    table += "              <input type='file' class='custom-file-input' id='inputGroupFile04' name='up_pdf' accept='.pdf'>";
+                    table += "              <input type='hidden' name='cod' value='"+cod+"'>";
+                    table += "              <input type='hidden' name='eid' value='"+e_id+"'>";
+                    table += "              <input type='hidden' name='destino' value='compra'>";
+                    table += "              <label class='custom-file-label' for='inputGroupFile04'>Choose file</label>";
+                    table += "          </div>";
+                    table += "          <div class='input-group-append'>";
+                    table += "              <button class ='btn btn-outline-primary' type='submit' id='btnUpload'>Upload</button>";
+                    table += "          </div>";
+                    table += "      </form>";
+                    table += "    </div>";
 
                     table += "<tr><td colspan='2'><form id='frmUpload' action='upload_nf.php' method='post' enctype='multipart/form-data'>";
                     table += "<input type='file'  id='validatedCustomFile' name='up_pdf' accept='.pdf'>";
@@ -119,17 +126,12 @@ $(document).ready(function(){
 
                 if(status == 'FECHADO'){
 
-                    table += "    <div class='input-group'>";
-                    table += "      <form id='frmUpload' action='upload_nf.php' method='post' enctype='multipart/form-data'>";
-                    table += "          <div class='custom-file'>";
-                    table += "               <input type='file' class='custom-file-input' id='inputGroupFile04' name='up_pdf' accept='.pdf'>";
-                    table += "               <label class='custom-file-label' for='inputGroupFile04'>Choose file</label>";
-                    table += "          </div>";
-                    table += "          <div class='input-group-append'>";
-                    table += "              <button class ='btn btn-outline-primary' type='submit' id='btnUpload'>Upload</button>";
-                    table += "          </div>";
-                    table += "      </form>";
-                    table += "    </div>";
+                    table += "<tr><td colspan='2'><form id='frmUpload' action='upload_nf.php' method='post' enctype='multipart/form-data'>";
+                    table += "<input type='file' class'btn-outline-success mr-1' id='validatedCustomFile' name='up_pdf' accept='.pdf'>";
+                    table += "<input type='hidden' name='cod' value='"+cod+"'>";
+                    table += "<input type='hidden' name='eid' value='"+e_id+"'>";
+                    table += "<input type='hidden' name='destino' value='compra'>";
+                    table += "<button class ='btn btn-outline-success' type='submit' id='btnUpload'>Upload</button></td></form></tr>";
                     
                     $(document).off('click', '#btnUpload').on('click', '#btnUpload', function() {
                         $('#frmUpload').submit();
